@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreApi5TokenAuth.API", "NetCoreApi5TokenAuth.API\NetCoreApi5TokenAuth.API.csproj", "{8CB390B6-BFA1-49EC-8C3C-E64536D0A4D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreApi5TokenAuth.API", "NetCoreApi5TokenAuth.API\NetCoreApi5TokenAuth.API.csproj", "{8CB390B6-BFA1-49EC-8C3C-E64536D0A4D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreApi5TokenAuth.Core", "NetCoreApi5TokenAuth.Core\NetCoreApi5TokenAuth.Core.csproj", "{A89B720C-7C88-4C76-A8C4-006EB52728A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreApi5TokenAuth.Data", "NetCoreApi5TokenAuth.Data\NetCoreApi5TokenAuth.Data.csproj", "{A3934002-C503-4B2E-9DE1-515F80D7939E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreApi5TokenAuth.Service", "NetCoreApi5TokenAuth.Service\NetCoreApi5TokenAuth.Service.csproj", "{73FC97C5-BC63-4ED0-ABC8-D25D19604B88}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{8CB390B6-BFA1-49EC-8C3C-E64536D0A4D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8CB390B6-BFA1-49EC-8C3C-E64536D0A4D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8CB390B6-BFA1-49EC-8C3C-E64536D0A4D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A89B720C-7C88-4C76-A8C4-006EB52728A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A89B720C-7C88-4C76-A8C4-006EB52728A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A89B720C-7C88-4C76-A8C4-006EB52728A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A89B720C-7C88-4C76-A8C4-006EB52728A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3934002-C503-4B2E-9DE1-515F80D7939E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3934002-C503-4B2E-9DE1-515F80D7939E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3934002-C503-4B2E-9DE1-515F80D7939E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3934002-C503-4B2E-9DE1-515F80D7939E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73FC97C5-BC63-4ED0-ABC8-D25D19604B88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73FC97C5-BC63-4ED0-ABC8-D25D19604B88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73FC97C5-BC63-4ED0-ABC8-D25D19604B88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73FC97C5-BC63-4ED0-ABC8-D25D19604B88}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
