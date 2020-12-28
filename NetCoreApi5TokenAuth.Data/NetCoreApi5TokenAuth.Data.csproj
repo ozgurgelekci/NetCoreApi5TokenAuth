@@ -4,4 +4,8 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\NetCoreApi5TokenAuth.Core\NetCoreApi5TokenAuth.Core.csproj" />
+  </ItemGroup>
+
 </Project>

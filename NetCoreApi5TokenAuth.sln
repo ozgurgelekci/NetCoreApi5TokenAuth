@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreApi5TokenAuth.Data",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreApi5TokenAuth.Service", "NetCoreApi5TokenAuth.Service\NetCoreApi5TokenAuth.Service.csproj", "{73FC97C5-BC63-4ED0-ABC8-D25D19604B88}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedLibrary", "SharedLibrary\SharedLibrary.csproj", "{C9E2A9FF-542C-435E-8FDC-1F746175BC63}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{73FC97C5-BC63-4ED0-ABC8-D25D19604B88}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73FC97C5-BC63-4ED0-ABC8-D25D19604B88}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73FC97C5-BC63-4ED0-ABC8-D25D19604B88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9E2A9FF-542C-435E-8FDC-1F746175BC63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9E2A9FF-542C-435E-8FDC-1F746175BC63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9E2A9FF-542C-435E-8FDC-1F746175BC63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9E2A9FF-542C-435E-8FDC-1F746175BC63}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
