@@ -8,4 +8,8 @@
     <ProjectReference Include="..\NetCoreApi5TokenAuth.Data\NetCoreApi5TokenAuth.Data.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+  </ItemGroup>
+
 </Project>
