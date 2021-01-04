@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
 
 namespace NetCoreApi5TokenAuth.Core.Entities.Concrete
 {

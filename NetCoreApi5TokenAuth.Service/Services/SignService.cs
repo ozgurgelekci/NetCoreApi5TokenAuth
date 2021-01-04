@@ -5,7 +5,7 @@ namespace NetCoreApi5TokenAuth.Service.Services
 {
     public static class SignService
     {
-        public static SecurityKey GetSecurityKey(string securityKey)
+        public static SecurityKey GetSymmetricSecurityKey(string securityKey)
         {
             return new SymmetricSecurityKey(Encoding.UTF8.GetBytes(securityKey));
         }

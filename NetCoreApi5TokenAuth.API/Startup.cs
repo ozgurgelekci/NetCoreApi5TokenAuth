@@ -1,4 +1,5 @@
-using System.Collections.Generic;
+using System;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -6,12 +7,15 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using NetCoreApi5TokenAuth.Core.Configuration;
 using NetCoreApi5TokenAuth.Core.Entities.Concrete;
 using NetCoreApi5TokenAuth.Data.DbContexts;
 using NetCoreApi5TokenAuth.Service.DependencyResolvers.MicrosoftIoC;
 using SharedLibrary.Configurations;
+using System.Collections.Generic;
+using NetCoreApi5TokenAuth.Service.Services;
 
 namespace NetCoreApi5TokenAuth.API
 {
@@ -46,6 +50,27 @@ namespace NetCoreApi5TokenAuth.API
 
             services.Configure<CustomTokenOption>(Configuration.GetSection("TokenOption"));
             services.Configure<List<Client>>(Configuration.GetSection("Clients"));
+
+            services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+
+            }).AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, opt =>
+            {
+                var tokenOptions = Configuration.GetSection("TokenOption").Get<CustomTokenOption>();
+                opt.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidIssuer = tokenOptions.Issuer,
+                    ValidAudience = tokenOptions.Audience[0],
+                    IssuerSigningKey = SignService.GetSymmetricSecurityKey(tokenOptions.SecurityKey),
+                    ValidateIssuerSigningKey = true,
+                    ValidateAudience = true,
+                    ValidateIssuer = true,
+                    ValidateLifetime = true,
+                    ClockSkew = TimeSpan.Zero
+                };
+            });
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

@@ -68,7 +68,7 @@ namespace NetCoreApi5TokenAuth.Service.Services
             var accessTokenExpiration = DateTime.Now.AddMinutes(_customTokenOption.AccessTokenExpiration);
             var refreshTokenExpiration = DateTime.Now.AddMinutes(_customTokenOption.RefreshTokenExpiration);
 
-            var securityKey = SignService.GetSecurityKey(_customTokenOption.SecurityKey);
+            var securityKey = SignService.GetSymmetricSecurityKey(_customTokenOption.SecurityKey);
 
             SigningCredentials signingCredentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256Signature);
 
@@ -96,7 +96,7 @@ namespace NetCoreApi5TokenAuth.Service.Services
         {
             var accessTokenExpiration = DateTime.Now.AddMinutes(_customTokenOption.AccessTokenExpiration);
 
-            var securityKey = SignService.GetSecurityKey(_customTokenOption.SecurityKey);
+            var securityKey = SignService.GetSymmetricSecurityKey(_customTokenOption.SecurityKey);
 
             SigningCredentials signingCredentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256Signature);
 
