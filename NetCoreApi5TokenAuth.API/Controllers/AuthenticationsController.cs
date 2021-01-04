@@ -5,7 +5,7 @@ using NetCoreApi5TokenAuth.Core.Services.Abstract;
 
 namespace NetCoreApi5TokenAuth.API.Controllers
 {
-    [Route("api/{controller}/{action}")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class AuthenticationsController : BaseController
     {
