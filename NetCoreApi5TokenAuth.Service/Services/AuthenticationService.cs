@@ -95,7 +95,7 @@ namespace NetCoreApi5TokenAuth.Service.Services
             return ResponseDto<TokenDto>.Success(tokenDto, 200);
         }
 
-        public async Task<ResponseDto<NoDataDto>> RevokeRefreshToken(string refreshToken)
+        public async Task<ResponseDto<NoDataDto>> RevokeRefreshTokenAsync(string refreshToken)
         {
             var existRefreshToken = await _userRefreshTokenRepository.Where(x => x.Code == refreshToken).SingleOrDefaultAsync();
 

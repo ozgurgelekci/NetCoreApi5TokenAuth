@@ -10,7 +10,7 @@ namespace NetCoreApi5TokenAuth.Core.Services.Abstract
 
         Task<ResponseDto<TokenDto>> CreateTokenByRefreshToken(string refreshToken);
 
-        Task<ResponseDto<NoDataDto>> RevokeRefreshToken(string refreshToken);
+        Task<ResponseDto<NoDataDto>> RevokeRefreshTokenAsync(string refreshToken);
 
         ResponseDto<ClientTokenDto> CreateTokenByClient(ClientLoginDto clientLoginDto);
     }
