@@ -1,7 +1,7 @@
-﻿using System.Text;
-using Microsoft.IdentityModel.Tokens;
+﻿using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
-namespace NetCoreApi5TokenAuth.Service.Services
+namespace SharedLibrary.Services
 {
     public static class SignService
     {

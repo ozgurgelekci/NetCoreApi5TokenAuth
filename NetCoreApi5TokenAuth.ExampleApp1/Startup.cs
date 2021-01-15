@@ -1,20 +1,13 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-using NetCoreApi5TokenAuth.Core.Configuration;
-using NetCoreApi5TokenAuth.Core.Entities.Concrete;
-using NetCoreApi5TokenAuth.Data.DbContexts;
-using NetCoreApi5TokenAuth.Service.DependencyResolvers.MicrosoftIoC;
 using SharedLibrary.Configurations;
-using System.Collections.Generic;
 using SharedLibrary.Extensions;
 
-namespace NetCoreApi5TokenAuth.API
+namespace NetCoreApi5TokenAuth.ExampleApp1
 {
     public class Startup
     {
@@ -28,33 +21,15 @@ namespace NetCoreApi5TokenAuth.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            // Custom Extension for DI
-            services.AddDependencies();
-
-            services.AddDbContext<AppDbContext>(options =>
-            {
-                options.UseSqlServer(Configuration.GetConnectionString("SqlServer"), sqlOptions =>
-                {
-                    sqlOptions.MigrationsAssembly("NetCoreApi5TokenAuth.Data");
-                });
-            });
+            services.Configure<CustomTokenOption>(Configuration.GetSection("TokenOption"));
 
             var tokenOptions = Configuration.GetSection("TokenOption").Get<CustomTokenOption>();
             services.AddCustomTokenAuth(tokenOptions);
 
-            services.AddIdentity<UserApp, IdentityRole>(options =>
-            {
-                options.User.RequireUniqueEmail = true;
-                options.Password.RequireNonAlphanumeric = false;
-            }).AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
-
-            services.Configure<CustomTokenOption>(Configuration.GetSection("TokenOption"));
-            services.Configure<List<Client>>(Configuration.GetSection("Clients"));
-
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "NetCoreApi5TokenAuth.API", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "NetCoreApi5TokenAuth.ExampleApp1", Version = "v1" });
             });
         }
 
@@ -65,7 +40,7 @@ namespace NetCoreApi5TokenAuth.API
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "NetCoreApi5TokenAuth.API v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "NetCoreApi5TokenAuth.ExampleApp1 v1"));
             }
 
             app.UseRouting();

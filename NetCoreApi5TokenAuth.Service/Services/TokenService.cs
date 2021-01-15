@@ -1,18 +1,18 @@
-﻿using NetCoreApi5TokenAuth.Core.Configuration;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
+using NetCoreApi5TokenAuth.Core.Configuration;
 using NetCoreApi5TokenAuth.Core.DTOs;
 using NetCoreApi5TokenAuth.Core.Entities.Concrete;
 using NetCoreApi5TokenAuth.Core.Services.Abstract;
+using SharedLibrary.Configurations;
+using SharedLibrary.Services;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
 using System.Security.Cryptography;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.Extensions.Options;
-using Microsoft.IdentityModel.Tokens;
-using SharedLibrary.Configurations;
-using JwtRegisteredClaimNames = Microsoft.IdentityModel.JsonWebTokens.JwtRegisteredClaimNames;
 
 namespace NetCoreApi5TokenAuth.Service.Services
 {
