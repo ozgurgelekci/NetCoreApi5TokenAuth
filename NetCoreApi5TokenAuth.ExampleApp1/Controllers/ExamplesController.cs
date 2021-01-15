@@ -14,9 +14,9 @@ namespace NetCoreApi5TokenAuth.ExampleApp1.Controllers
         public IActionResult GetExample()
         {
             var userName = HttpContext.User.Identity.Name;
-            var userId = User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier);
+            var userIdClaim = User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier);
 
-            return Ok($"UserName: {userName} - UserId: {userId}");
+            return Ok($"UserName: {userName} - UserId: {userIdClaim.Value}");
         }
     }
 }
